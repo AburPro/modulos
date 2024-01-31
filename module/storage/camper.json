@@ -6,12 +6,6 @@
         "Genero": "3"
     },
     {
-        "Nombre": "anderson",
-        "Apellido": "burbano",
-        "Edad": 28,
-        "Genero": "1"
-    },
-    {
         "Nombre": "Danna",
         "Apellido": "Paola",
         "Edad": 17,
@@ -22,5 +16,11 @@
         "Apellido": "Geyes",
         "Edad": 15,
         "Genero": "4"
+    },
+    {
+        "Nombre": "carter",
+        "Apellido": "smit",
+        "Edad": 24,
+        "Genero": "9"
     }
 ]

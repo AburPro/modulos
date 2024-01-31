@@ -4,6 +4,12 @@ from .validate import menuNoValid
 from .data import camper, generos
 
 def save():
+    system("clear")
+    print("""
+    ***************************
+    *  Formulario del camper  *
+    ***************************
+    """)
     info = {
         "Nombre": input("Ingrese el nombre del camper\n"),
         "Apellido": input("Ingrese el apellido del camper\n"),
@@ -22,11 +28,11 @@ def edit():
     while (bandera):
         system("clear")
         print("""
-            ****************************
-            * Actualización del camper *
-            ****************************
+        ***************************
+        * Acualizacion del camper *
+        ***************************
         """)
-        codigo = int(input("Ingrese el codigo del camper que deseas actualizar: "))
+        codigo = int(input("Ingrese el codigo del camper que deseas actualizar"))
         print(f"""
 ________________________
 Codigo: {codigo}
@@ -53,9 +59,9 @@ ________________________
                 data = json.dumps(camper, indent=4)
                 f.write(data)
                 f.close()
-            bandera == False
+            bandera = False
         elif(opc == 3):
-            bandera == False
+            bandera = False
     return "Edit to camper"
 
 def search():
@@ -78,6 +84,38 @@ ________________________
     return "The camper is available"
 
 def delete():
+    bandera = True
+    while(bandera):
+        system("clear")
+        print("""
+        ***************************
+        * Eliminacion del camper  *
+        ***************************
+        """)
+        codigo = int(input("Ingrese el codigo del camper que deseas eliminar: "))
+        print(f"""
+________________________
+Codigo: {codigo}
+Nombre: {camper[codigo].get('Nombre')}
+Apellido: {camper[codigo].get('Apellido')}
+Edad: {camper[codigo].get('Edad')}
+Genero: {camper[codigo].get('Genero')}
+________________________
+        """)
+        print("¿Este es el camper que deseas actualizar?")
+        print("1. Si")
+        print("2. No")
+        print("3. Salir")
+        opc = int(input())
+        if(opc == 1):
+            camper.pop(codigo)
+            with open("module/storage/camper.json", "w") as f:
+                data = json.dumps(camper, indent=4)
+                f.write(data)
+                f.close()
+            bandera = False
+        elif(opc == 3):
+            bandera = False
     return "Camper deleted"
 
 def menu():
