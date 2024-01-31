@@ -1,11 +1,11 @@
 # from module.camper import *
 # from module.camper import save
 # from module.camper import delete as eliminar
+import json
 from os import system
 import module.camper as camper
 import module.trainer as trainer
 from module.validate import menuNoValid
-import json
 def menu():
     print("Sistema de almacenamiento de datos para campus")
     print("\t1. Informacion del camper")
@@ -17,11 +17,12 @@ while (bandera):
     opc = int(input())
     match(opc):
         case 1:
-            with open("module/storage/camper.json", "r") as f
-            camper.camper = json.loads(f.read())
-            f.close()
-            system("clear")
-            camper.menu()
+            
+            with open("module/storage/camper.json", "r") as f:
+                camper.camper = json.loads(f.read())
+                f.close()
+                system("clear")
+                camper.menu()
         case 2:
             print("")
         case 0:

@@ -1,1 +1,26 @@
-[]
+[
+    {
+        "Nombre": "Eduardo",
+        "Apellido": "Villamizar",
+        "Edad": 19,
+        "Genero": "3"
+    },
+    {
+        "Nombre": "anderson",
+        "Apellido": "burbano",
+        "Edad": 28,
+        "Genero": "1"
+    },
+    {
+        "Nombre": "Danna",
+        "Apellido": "Paola",
+        "Edad": 17,
+        "Genero": "3"
+    },
+    {
+        "Nombre": "Sebastian",
+        "Apellido": "Geyes",
+        "Edad": 15,
+        "Genero": "4"
+    }
+]
